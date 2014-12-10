@@ -1,0 +1,8 @@
+<h1>Elements</h1>
+
+<% elements.each(function(model){ %>
+  <div id="<%= model.escape('name')%>">
+    <h3><%= model.escape('symbol')%></h3>
+    <p><%= model.escape('name')%></p>
+  </div>
+<% }); %>

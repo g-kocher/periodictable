@@ -16,3 +16,4 @@
 //= require lib/underscore
 //= require lib/backbone
 //= require app
+//= require_tree ../templates

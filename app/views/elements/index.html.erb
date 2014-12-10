@@ -4,5 +4,6 @@
 </div>
 
 <%= javascript_tag do %>
-  PTApp.initialize({elements: <%= @elements.to_json%>});
+    PTApp.initialize({elements: <%== @elements.to_json %>});
+
 <% end %>
