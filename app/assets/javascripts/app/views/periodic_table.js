@@ -1,6 +1,14 @@
 PTApp.Views.PeriodicTable = Backbone.View.extend({
   render: function(){
-    this.$el.html(JST['elements/index']({elements: this.collection}));
+    var self = this;
+
+    this.$el.html(JST['elements/index']());
+
+    this.collection.each(function(element){
+      var elementView = new PTApp.Views.Element({model: element});
+      self.$('div#periodic-table').append(elementView.render().el);
+    });
+
     return this;
   }
 });
