@@ -13,6 +13,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'ejs', '1.1.1'
 
+gem 'puma', '~>2.10.2'
+
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 #gem 'spring',        group: :development
