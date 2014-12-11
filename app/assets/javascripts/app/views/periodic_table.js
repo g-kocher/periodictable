@@ -10,5 +10,14 @@ PTApp.Views.PeriodicTable = Backbone.View.extend({
     });
 
     return this;
+  },
+
+  events: {
+    'click div.element': "elementDetail"
+  },
+
+  elementDetail: function(e){
+    var element = $(e.currentTarget).attr('title');
+    router.navigate(element, true);
   }
 });

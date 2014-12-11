@@ -12,7 +12,7 @@ var PTApp = {
 
   initialize: function(data){
     this.elements = new PTApp.Collections.Elements(data.elements);
-    new PTApp.Routers.PeriodicTable;
+    router = new PTApp.Routers.PeriodicTable;
     Backbone.history.start();
   }
 };
