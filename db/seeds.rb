@@ -11,3 +11,69 @@ elements = [["1", "H", "Hydrogen"], ["2", "He", "Helium"], ["3", "Li", "Lithium"
 elements.each do |element|
   Element.create(atomic_number: element[0], symbol: element[1], name: element[2])
 end
+Element.all.each do |element|
+  an = element.atomic_number
+  case #assign periods
+  when [1,3,11,19,37,55,87].include?(an)
+    element.group = 1
+  when [4,12,20,38,56,88].include?(an)
+    element.group = 2
+  when [21, 39, 71, 103].include?(an)
+    element.group = 3
+  when [22, 40, 72, 104].include?(an)
+    element.group = 4
+  when [23, 41, 73, 105].include?(an)
+    element.group = 5
+  when [24, 42, 74, 106].include?(an)
+    element.group = 6
+  when [25, 43, 75, 107].include?(an)
+    element.group = 7
+  when [26, 44, 76, 108].include?(an)
+    element.group = 8
+  when [27, 45, 77, 109].include?(an)
+    element.group = 9
+  when [28, 46, 78, 110].include?(an)
+    element.group = 10
+  when [29, 47, 79, 111].include?(an)
+    element.group = 11
+  when [30, 48, 80, 112].include?(an)
+    element.group = 12
+  when [5, 13, 31, 49, 81, 113].include?(an)
+    element.group = 13
+  when [6, 14, 32, 50, 82, 114].include?(an)
+    element.group = 14
+  when [7, 15, 33, 51, 83, 115].include?(an)
+    element.group = 15
+  when [8, 16, 34, 52, 84, 116].include?(an)
+    element.group = 16
+  when [9, 17, 35, 53, 85, 117].include?(an)
+    element.group = 17
+  when [2, 10, 18, 36, 54, 86, 118].include?(an)
+    element.group = 18
+  when (57..71).include?(an)
+    element.group = 'Lanthanide'
+  when (89..103).include?(an)
+    element.group = 'Actinide'
+  end
+
+  case # assign groups
+  when (1..2).include?(an)
+    element.period = 1
+  when (3..10).include?(an)
+    element.period = 2
+  when (11..18).include?(an)
+    element.period = 3
+  when (19..36).include?(an)
+    element.period = 4
+  when (37..54).include?(an)
+    element.period = 5
+  when (55..86).include?(an)
+    element.period = 6
+  when (87..118).include?(an)
+    element.period = 7
+  end
+
+  element.save
+end
+
+

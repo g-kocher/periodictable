@@ -1,8 +1,14 @@
 PTApp.Views.Element = Backbone.View.extend({
   tagName: 'div',
-  className: 'element',
+  attributes: function(){
+    return {
+      title: this.model.get('name'),
+      class: ('element period-' + this.model.get('period') +' group-' + this.model.get('group'))
+    }
+  },
 
-  initialize: function(){
+  events: {
+    
   },
 
   render: function(){
